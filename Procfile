@@ -1,1 +1,1 @@
-web: gunicorn food_flex:app
+web: gunicorn gettingstarted.wsgi --log-file -
