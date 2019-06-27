@@ -5,7 +5,7 @@ from api.views import RestaurantViewSet
 router = routers.DefaultRouter()
 
 # router.register(r'users', UserViewSet)
-router.register(r'restaurant', RestaurantViewSet)
+router.register(r'restaurants', RestaurantViewSet)
 
 urlpatterns = [
     url(r'', include(router.urls)),
