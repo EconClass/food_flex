@@ -17,21 +17,12 @@
 
     <title>{% block title %}{% endblock %} | Food Flex</title>
     <style type="text/css">
-        /* Sticky footer styles
-        -------------------------------------------------- */
-        html {
-            position: relative;
-            min-height: 100%;
-        }
-        body {
-            /* Margin bottom by footer height */
-            margin-bottom: 60px;
-        }
         h1, h2, h3, h4, h5 {
             font-family: 'Abril Fatface', cursive;
         }
         p, .btn, body {
             font-family: 'Lato', sans-serif;
+
         }
         .footer {
             position: absolute;
@@ -40,34 +31,46 @@
             /* Set the fixed height of the footer here */
             height: 60px;
             line-height: 60px; /* Vertically center the text there */
-            background-color: #f5f5f5;
+            background-color: #000;
         }
+
+        body {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-image:url("https://background-tiles.com/overview/red/patterns/large/1045.png");
+          background-repeat:repeat;
+        }
+
+        body {
+          height: 100vh;
+        }
+
+        #title {
+          background-color: #ecf0f1;
+          border-radius: 20px;
+          padding: 75px 75px;
+        }
+
+        * {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
 
     </style>
     
   </head>
 
   <body>
-
-        <header>
-          <!-- Fixed navbar -->
-          <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-            <a class="navbar-brand" href="#">Food Flex</a>
-          </nav>
-        </header>
-    
         <!-- Begin page content -->
-        <main role="main" class="container">
-          {% block content %}
-          {% endblock %}
-        </main>
+        <div id="title">
+            {% block content %}
+            {% endblock %}
+        </div>
+        
     
-        <footer class="footer">
-          <div class="container">
-              <!-- insert footer text if needed -->
-            <span class="text-muted"></span>
-          </div>
-        </footer>
+   
     
         <!-- Bootstrap core JavaScript
         ================================================== -->

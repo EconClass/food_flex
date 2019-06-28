@@ -16,9 +16,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls import url
+from django.views.generic import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('api.urls')),
+     # search
     path('restaurants/', include('restaurants.urls')),
+    # search
+    path('search/', include('restaurants.urls')),
+    # profile
+    path('user/', include('restaurants.urls')),
+
     url(r'^api-auth/', include('rest_framework.urls'))
 ]

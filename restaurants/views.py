@@ -4,5 +4,3 @@ from .models import Restaurant
 class RestaurantListView(ListView):
     model = Restaurant
     template_name = "restaurant.html"
-
-

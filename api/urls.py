@@ -1,13 +1,7 @@
-from django.conf.urls import url, include
-from rest_framework import routers
-from api.views import RestaurantViewSet
+from django.conf.urls import url
 
-router = routers.DefaultRouter()
-
-# router.register(r'users', UserViewSet)
-router.register(r'restaurants', RestaurantViewSet)
+from . import views
 
 urlpatterns = [
-    url(r'', include(router.urls)),
-    url(r'auth/', include('rest_framework.urls'))
+    url('$', views.home, name='home'),
 ]
