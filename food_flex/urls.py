@@ -19,14 +19,21 @@ from django.conf.urls import url
 from django.views.generic import TemplateView
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('api.urls')),
-     # search
-    path('restaurants/', include('restaurants.urls')),
-    # search
-    path('search/', include('restaurants.urls')),
-    # profile
-    path('user/', include('restaurants.urls')),
+    path('admin/', admin.site.urls), # Admin Site
 
-    url(r'^api-auth/', include('rest_framework.urls'))
+    path('accounts/', include('accounts.urls')),
+    path('accounts/', include('django.contrib.auth.urls')), # Accounts (URL PATTERN CAN CHANGE)
+
+    path('', TemplateView.as_view(template_name='home.html'), name='home'),
+
+
+    # path('', include('api.urls')),
+    #  # search
+    # path('restaurants/', include('restaurants.urls')),
+    # # search
+    # path('search/', include('restaurants.urls')),
+    # # profile
+    # path('user/', include('restaurants.urls')),
+
+    # url(r'^api-auth/', include('rest_framework.urls'))
 ]
