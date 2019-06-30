@@ -1,6 +1,6 @@
 import requests, json, os
 from django.http import Http404
-from .models import Restaurant
+from restaurants.models import Restaurant
 
 
 def call_api_with_key(location="San Francisco"):
@@ -32,6 +32,8 @@ def save_to_db(data={}):
     restaurant.name = data['name']
     restaurant.address = data['location']['city']
     restaurant.city = data['location']['address1']
+    restaurant.name = data['url']
+    restaurant.state = data['location']['state']
 
     restaurant.save()
 
@@ -47,6 +49,6 @@ def save_10(restaurants=[]):
     for restaurant in restaurants:
         save_to_db(restaurant)
 
-if __name__ == "__main__":
-    parsed = call_api_with_key()
-    save_10(parsed['businesses'])
+# if __name__ == "__main__":
+#     parsed = call_api_with_key()
+#     save_10(parsed['businesses'])
