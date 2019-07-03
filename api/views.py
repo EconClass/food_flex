@@ -1,12 +1,10 @@
-from django.shortcuts import render
-# from django.contrib.auth.models import User
+from django.shortcuts import render, Http404, redirect
+from django.http import HttpResponse, HttpResponseRedirect
+from django.urls import reverse
 
-from rest_framework import viewsets
-
-from restaurants.models import Restaurant
-from api.serializers import RestaurantSerializer
+# Create your views here.
 
 
-class RestaurantViewSet(viewsets.ModelViewSet):
-    queryset = Restaurant.objects.all()
-    serializer_class = RestaurantSerializer
+def home(request):
+    return render(request, 'api/home.html', {
+    })

@@ -1,0 +1,124 @@
+<!-- templates/home.html-->
+{% extends 'base.html' %}
+
+{% block styles %}
+<style type="text/css">
+    /* CENTERS THE PAGE */
+    .homepage {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    .container-fluid {
+        max-width: 1200px;
+    }
+
+    [class*="row"] {
+        margin-bottom: 1em;
+        justify-content: center;
+    }
+</style>
+{% endblock %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+
+Hi {{ user.username }}!
+<p><a href="{% url 'logout' %}">logout</a></p>
+
+<!-- flexbox grid -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="card-deck">
+            <!-- bootstrap card -->
+            <div class="card text-center" style="width: 18rem;">
+                <!-- image_url + name -->
+                <a href="https://www.yelp.com/biz/saigon-sandwich-san-francisco?osq=saigon+sandiwch">
+                    <img class="card-img-top" " src="
+                        https://s3-media4.fl.yelpcdn.com/bphoto/lVyf1pn7ft4YzO2n4z7Exg/348s.jpg" alt="Saigon Sandwich">
+                </a>
+
+                <div class="card-body">
+                    <!-- name + url -->
+                    <h5><a class="card-title"
+                            href="https://www.yelp.com/biz/saigon-sandwich-san-francisco?osq=saigon+sandiwch">Saigon
+                            Sandwich1</a>
+                    </h5>
+                    <!-- city + state -->
+                    <p class="card-text">San Francisco, CA</p>
+                </div>
+            </div>
+            <!-- bootstrap card -->
+            <div class="card text-center" style="width: 18rem;">
+                <!-- image_url + name -->
+                <a href="https://www.yelp.com/biz/saigon-sandwich-san-francisco?osq=saigon+sandiwch">
+                    <img class="card-img-top" " src="
+                        https://s3-media4.fl.yelpcdn.com/bphoto/lVyf1pn7ft4YzO2n4z7Exg/348s.jpg" alt="Saigon Sandwich">
+                </a>
+
+                <div class="card-body">
+                    <!-- name + url -->
+                    <h5><a class="card-title"
+                            href="https://www.yelp.com/biz/saigon-sandwich-san-francisco?osq=saigon+sandiwch">Saigon
+                            Sandwich2</a>
+                    </h5>
+                    <!-- city + state -->
+                    <p class="card-text">San Francisco, CA</p>
+                </div>
+            </div>
+            <!-- bootstrap card -->
+            <div class="card text-center" style="width: 18rem;">
+                <!-- image_url + name -->
+                <a href="https://www.yelp.com/biz/saigon-sandwich-san-francisco?osq=saigon+sandiwch">
+                    <img class="card-img-top" " src="
+                        https://s3-media4.fl.yelpcdn.com/bphoto/lVyf1pn7ft4YzO2n4z7Exg/348s.jpg" alt="Saigon Sandwich">
+                </a>
+
+                <div class="card-body">
+                    <!-- name + url -->
+                    <h5><a class="card-title"
+                            href="https://www.yelp.com/biz/saigon-sandwich-san-francisco?osq=saigon+sandiwch">Saigon
+                            Sandwich3</a>
+                    </h5>
+                    <!-- city + state -->
+                    <p class="card-text">San Francisco, CA</p>
+                </div>
+            </div>
+
+            <!-- bootstrap card -->
+            <div class="card text-center" style="width: 18rem;">
+                    <!-- image_url + name -->
+                    <a href="https://www.yelp.com/biz/saigon-sandwich-san-francisco?osq=saigon+sandiwch">
+                        <img class="card-img-top" " src="
+                            https://s3-media4.fl.yelpcdn.com/bphoto/lVyf1pn7ft4YzO2n4z7Exg/348s.jpg" alt="Saigon Sandwich">
+                    </a>
+    
+                    <div class="card-body">
+                        <!-- name + url -->
+                        <h5><a class="card-title"
+                                href="https://www.yelp.com/biz/saigon-sandwich-san-francisco?osq=saigon+sandiwch">Saigon
+                                Sandwich</a>
+                        </h5>
+                        <!-- city + state -->
+                        <p class="card-text">San Francisco, CA</p>
+                    </div>
+                </div>
+                
+        </div>
+    </div>
+</div>
+
+
+{% else %}
+<div class="homepage">
+    <h1 style="font-size: 224px; font-weight: 700">FOOD FLEX</h1>
+    <p style="font-size: 64px; font-weight: 300">Track Where You've Eaten</p>
+    <a href="{% url 'login' %}" role="button" class="btn btn-primary">Get Started</a>
+</div>
+{% endif %}
+{% endblock %}
