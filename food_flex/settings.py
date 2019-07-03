@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'bootstrap4',
 
     'restaurants.apps.RestaurantsConfig',
+    'accounts.apps.AccountsConfig',
     'api.apps.ApiConfig',
 ]
 

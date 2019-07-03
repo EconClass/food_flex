@@ -1,9 +1,10 @@
-# from django.views.generic import ListView
-from rest_framework.views import APIView
+from django.views.generic import ListView
+# from rest_framework.views import APIView
 from .models import Restaurant
 
 
-class RestaurantListView(APIView):
+class RestaurantListView(ListView):
     model = Restaurant
-    template_name = "restaurant.html"
+    template_name = "home.html"
     # def get(self, )
+        
