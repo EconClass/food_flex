@@ -26,7 +26,9 @@ class RestaurantTestCase(TestCase):
     def test_correct_restaurant_info(self):
         coffe = Restaurant.objects.get(name='Four Barrel Coffee')
         sandwich = Restaurant.objects.get(name='Saigon Sandwich')
-        
+        self.assertEquals(coffe.address, '375 Valencia St')
+        self.assertEquals(sandwich.address, '560 Larkin Street')
+
 
 class RestaurantViewTestCase(TestCase):
 
