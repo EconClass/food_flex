@@ -1,13 +1,13 @@
 import requests, json, os
 from django.http import Http404
-from restaurants.models import Restaurant
+from .models import Restaurant
 
 
 # Yelp authorization headers
 AUTH = {'Authorization': 'Bearer ' + os.getenv('YELP_KEY')}
 
 
-def call_api_with_location(location="San Francisco", restaurant="restaurants"):
+def call_yelp_api(location="San Francisco", restaurant="restaurants"):
     """This function searches for restaurants from Yelp's Fusion API
     based on a provided location. It returns a JSON response converted
     into a Python dictionary"""
@@ -16,7 +16,7 @@ def call_api_with_location(location="San Francisco", restaurant="restaurants"):
 
     try:
         # Request from Yelp Fusion API
-        res = requests.get(url, headers=AUTH)
+        res = requests.get(url, headers=AUTH).content
         parsed = json.loads(res)
     except json.JSONDecodeError:
         raise Http404
@@ -49,3 +49,7 @@ def save_10(restaurants=[]):
     
     for restaurant in restaurants:
         save_to_db(restaurant)
+
+
+# if __name__ == "__main__":
+#     print(call_api_with_location())
