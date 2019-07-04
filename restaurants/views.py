@@ -11,7 +11,7 @@ class RestaurantListView(ListView):
 
 class SearchListView(ListView):
     model = Restaurant
-    template_name = "home.html"
+    template_name = "search.html"
     # def get(self, request):
     #     context = call_api_with_location()
     #     return context
