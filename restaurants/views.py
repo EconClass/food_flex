@@ -1,6 +1,6 @@
 from django.views.generic import ListView
 from django.shortcuts import render
-from .utils import call_api_with_location
+from .utils import call_yelp_api
 from .models import Restaurant
 
 
@@ -13,5 +13,5 @@ class SearchListView(ListView):
     model = Restaurant
     template_name = "search.html"
     def get(self, request):
-        context = call_api_with_location()
+        context = call_yelp_api()
         return render(request, self.template_name, context)
