@@ -17,7 +17,7 @@ def call_yelp_api(location="San Francisco", restaurant="restaurants"):
     try:
         # Request from Yelp Fusion API
         res = requests.get(url, headers=AUTH).content
-        parsed = json.loads(res)
+        parsed = json.loads(res)['businesses']
     except json.JSONDecodeError:
         raise Http404
     
@@ -35,6 +35,7 @@ def save_to_db(data={}):
     restaurant.city = data['location']['address1']
     restaurant.name = data['url']
     restaurant.state = data['location']['state']
+    restaurant.image_url = data['image_url']
 
     restaurant.save()
 
