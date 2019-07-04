@@ -1,11 +1,14 @@
 # Food Flex: track where you eat
 
-A platform that utilizes Yelp's API to see where you have eaten. Yelp Check-in's record every visite, but Food Flex gives users important stats such as: 
+A platform that integrates Yelp's API to see where you have eaten. Yelp Check-in's record every visite, but Food Flex gives users important stats such as: 
 - Restaurants that you have eaten at in a certain location/radius
 - Number of restaurants eaten at
 - More coming soon
 
-Visit the app [here](#)
+Visit the app [here](http://food-flex.herokuapp.com)
+
+Check out our [portfolios](https://www.makeschool.com/portfolio/Timothy-Kaing) for more projects 🎉
+
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -23,8 +26,6 @@ As partners we:
 - Wireframed and Scoped our product
 - Pair Programmed
 
-## User Stories
-
 #### MVP Goals
 - [x] User can create an account
 - [ ] User can search for restaurants
@@ -38,7 +39,7 @@ As partners we:
 - Backend: Django
 - Frontend: HTML/CSS/JS (Django Template System)
 - Database: SQLite 3
-- API: Yelp
+- Integrations: Yelp API 🔌
 
 ## Contributors
 - [@econclass](https://github.com/econclass)
