@@ -12,6 +12,7 @@ class RestaurantListView(ListView):
 class SearchListView(ListView):
     model = Restaurant
     template_name = "search.html"
+    
     def get(self, request):
         context = call_yelp_api()
         return render(request, self.template_name, context)
