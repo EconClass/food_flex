@@ -19,4 +19,3 @@ _**NOTE**: Must score higher than a **`70%`** to pass._
 | Public GitHub repo                         |    `5`    |   `00`   |     ☑    |
 | No exposed secrets                         |    `5`    |   `00`   |     ☑    |
 | **TOTAL**                                  | **`275`** | **`00`** |**`250`** |
--
