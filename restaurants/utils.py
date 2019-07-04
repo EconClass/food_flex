@@ -49,7 +49,3 @@ def save_10(restaurants=[]):
     
     for restaurant in restaurants:
         save_to_db(restaurant)
-
-# if __name__ == "__main__":
-#     parsed = call_api_with_key()
-#     save_10(parsed['businesses'])
